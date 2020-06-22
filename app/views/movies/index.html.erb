@@ -1,0 +1,16 @@
+
+
+<%= render "movielisting" %>
+
+
+
+
+<% if current_user_admin? %>
+
+<section class="admin"> 
+<%= link_to "Add New Movie", new_movie_path, class: "button"%>
+
+</section>
+
+
+<% end %>

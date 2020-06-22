@@ -1,0 +1,36 @@
+<% @movies.each do |movie| %>
+  <section class="movie">
+  <div class="image">
+  <%= image_tag movie.image_file_name %>
+  </div>
+
+    <div class="summary">
+      <h2>
+        <%= link_to movie.title, movie %>
+      </h2>
+      <h3>
+        <%= total_gross(movie) %>
+      </h3>
+      <span class="stars">
+    <%= link_to average_stars(movie), movie_reviews_path(movie) %>
+  </span>
+      <p>
+        <%= truncate(movie.description, length: 150, separator: ' ') %>
+      </p>
+
+<% movie.genres.each do |g| %>
+<%= link_to g.name, genre_path(g) %>,
+<% end %>
+
+    </div>
+
+
+
+
+
+
+
+  </section>
+
+  
+<% end %>

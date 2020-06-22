@@ -1,0 +1,12 @@
+<h3>Review #<%= @review.id %> for <%= @movie.title %></h3>
+
+<p>
+<%= @review.comment%> by <%= @review.name %> and stars would be: <%= @review.stars %>
+</p>
+
+<section class="admin">
+
+       <%= link_to "edit", edit_movie_review_path(@movie, @review), class: "button" %>
+       <%= link_to "delete", movie_review_path(@movie, @review), class: "button", method: :delete, data: { confirm: "Delete Review?" }%>
+
+</section>
